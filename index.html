@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+  
+  <link rel="stylesheet" href="presubmit.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+
+  <!-- script -->
+  <script>
+    let clicked_id=null;
+    function selectbutton(id){
+      clicked_id = id;
+      if (document.querySelector("button.selected")){
+        document.querySelector("button.selected").classList.remove('selected');
+      }
+      document.getElementById(id).classList.add('selected');
+    }
+    function onSubmit(clicked_id) {
+      if (clicked_id){
+        document.getElementById("ratingstate").className = document.getElementById("ratingstate").className.replace('rating_show','rating_hide');
+        document.getElementById("thankingstate").className =document.getElementById("thankingstate").className.replace('thankyou_hide','thankyou_show');
+        document.getElementById('ratinginfo').innerHTML = "<span>You selected " + clicked_id.toString() + " out of 5";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Rating state -->
+  <div id="ratingstate" class="rating_show">
+    <div class="star-button">
+      <img class="img" src="images/icon-star.svg" alt="star-icon">
+    </div>
+    <div class="bigtext">How did we do?</div>
+    <div class="smalltxt">Please let us know how we did with your support request. All feedback is appreciated 
+      to help us improve our offering!</div>
+    <div class="ratings">
+      <button id="1" onclick="selectbutton(this.id)">1</button>
+      <button id="2" onclick="selectbutton(this.id)">2</button>
+      <button id="3" onclick="selectbutton(this.id)">3</button>
+      <button id="4" onclick="selectbutton(this.id)">4</button>
+      <button id="5" onclick="selectbutton(this.id)">5</button>
+    </div>
+    <div><button class="submit" onclick="onSubmit(clicked_id)">SUBMIT</button></div>
+  </div>  
+  
+  <!-- Thank you state start -->
+  <div id="thankingstate" class="thankyou_hide">
+    <div class="phone-div">
+      <img class="img" src="images/illustration-thank-you.svg" alt="a photo that conveys a file on a phone being sent on the internet">
+    </div>
+    <div id="ratinginfo"> </div>
+    <div class="bigtext">Thank you!</div>
+    <div class="smalltxt">We appreciate you taking the time to give a rating. If you ever need more support, 
+      don’t hesitate to get in touch!</div>
+  </div>
+
+  <!-- attribution -->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/juno0013?tab=projects">Jahanvi Kathiriya</a>.
+  </div>
+</body>
+</html>
