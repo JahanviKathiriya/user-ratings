@@ -3,7 +3,7 @@ body{
     background: hsl(216, 12%, 8%);
     color: hsl(0, 0%, 100%);
     font-weight: 400;
-    font-size: 10px;
+    font-size: 0.63rem;
     line-height: 150%;
 }
 
@@ -30,11 +30,10 @@ body{
 
 .img{
     width: 35%;
-    height: 35%;
 }
 
-.bigtext{
-    font-size: 15px;
+h1{
+    font-size: 0.94rem;
     font-weight: 700;
     padding-top: 25px;
     padding-bottom: 10px;
@@ -59,29 +58,33 @@ button{
     width: 35px;
     height: 35px;
     border: 0;
+    transition: 0.5s;
 }
 
 button:hover{
     background: hsl(25, 97%, 53%);
     color: white;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 button.selected{
     background: hsl(217, 12%, 63%);
     color: white;
+    transition: 0.5s;
 }
 
 .submit{
     background: hsl(25, 97%, 53%);
     color: white;
     text-align: center;
-    font-size: 11px;
+    font-size: 0.68rem;
     border-radius: 20px;
     border: 0;
     width:225px;
     height: 30px;
     transition: 0.3s;
+    transition: 0.5s;
 }
 
 .submit:hover{
